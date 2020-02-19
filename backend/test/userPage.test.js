@@ -1,5 +1,5 @@
 const { describe, it, after, before } = require('mocha');
-const Page = require('../lib/homePage');
+const Page = require('../lib/userPage');
 const dotenv = require('dotenv');
 dotenv.config();
 const chai = require('chai');

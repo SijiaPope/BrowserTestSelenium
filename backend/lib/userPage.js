@@ -26,23 +26,6 @@
 //     return result;
 // };
 //
-// // not working
-// // Page.prototype.findInputAndButton = async function () {
-// //     searchInput = await this.findThroughId("usernameId");
-// //     searchButton = await this.findThroughId("inputId");
-// //     console.log(searchButton);
-// //     const result = await this.driver.wait(async function () {
-// //         const searchButtonText = await searchButton.getAttribute('value');
-// //         const searchInputEnableFlag = await searchInput.isEnabled();
-// //
-// //         return {
-// //             inputEnabled: searchInputEnableFlag,
-// //             buttonText: searchButtonText
-// //         }
-// //     }, 5000);
-// //     return result;
-// // };
-//
 // // Page.prototype.submitKeywordAndGetResult = async function() {
 // //     await this.findInputAndButton();
 // //
