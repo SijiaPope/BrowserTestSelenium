@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-02-19T07:10:27.134Z",
+    "end": "2020-02-19T07:10:29.501Z",
+    "duration": 2367,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "fcfc07b4-94b8-4f8c-aca4-0efa6254a5a7",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "6b86ca32-0eb7-4a2c-9828-46bbcbc8bf84",
+        "title": "User page automated testing",
+        "fullFile": "/Users/scarlettgao/Documents/MERN/mern_demo/backend/test/userPage.test.js",
+        "file": "/test/userPage.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before each\" hook",
+            "fullTitle": "User page automated testing \"before each\" hook",
+            "timedOut": false,
+            "duration": 798,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "page = new Page();\ndriver = page.driver;\nawait page.visit(`${process.env.TESTING_URL}/user`);\n// await page.visit(\"http://localhost:3000/user\");",
+            "err": {},
+            "isRoot": false,
+            "uuid": "2c12dc4d-f188-4770-beb0-bb2d2b370466",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after each\" hook",
+            "fullTitle": "User page automated testing \"after each\" hook",
+            "timedOut": false,
+            "duration": 52,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await page.quit();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "4cbfe7f4-af20-4f44-9e6e-d4502e3609dd",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "find the input box and button",
+            "fullTitle": "User page automated testing find the input box and button",
+            "timedOut": false,
+            "duration": 82,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const result = await page.findInputAndButton();\nexpect(result.inputEnabled).to.equal(true);\nexpect(result.buttonText).to.include('Create User');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "c2550211-c378-4192-8105-f7da1d20ee3a",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Create User -- check if contents are displayed ",
+            "fullTitle": "User page automated testing Create User -- check if contents are displayed ",
+            "timedOut": false,
+            "duration": 85,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const title = await page.findThroughTagName(\"h3\");\nexpect(title).to.equal('Create New User');\nconst UserNameLable = await page.findThroughTagName(\"label\");\nconsole.log(\"UserNameLable is \", UserNameLable);\nexpect(UserNameLable).to.equal('Username:');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "8b7e355d-6606-4b29-bae2-7805018b56c2",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "c2550211-c378-4192-8105-f7da1d20ee3a",
+          "8b7e355d-6606-4b29-bae2-7805018b56c2"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 167,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 5000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2020
+}

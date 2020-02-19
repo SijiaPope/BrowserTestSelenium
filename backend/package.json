@@ -1,0 +1,44 @@
+{
+    "name": "googlesearch",
+    "version": "1.0.0",
+    "description": "Google home page automated test ",
+    "main": "index.js",
+    "scripts": {
+        "watch": "nodemon server.js",
+        "test": "mocha test --reporter mochawesome --reporter-options autoOpen=true",
+        "unitTest": "mocha --recursive --exit"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bmshamsnahid/Automation-With-Selenium-And-Node.js.git"
+    },
+    "author": "B M Shams Nahid",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bmshamsnahid/Automation-With-Selenium-And-Node.js/issues"
+    },
+    "homepage": "https://github.com/bmshamsnahid/Automation-With-Selenium-And-Node.js#readme",
+    "directories": {
+        "lib": "lib",
+        "test": "test"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "bootstrap": "^4.3.1",
+        "concurrently": "^4.1.1",
+        "cors": "^2.8.5",
+        "dotenv": "^8.0.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.6.6",
+        "nodemon": "^2.0.2"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "chai-as-promised": "^7.1.1",
+        "chromedriver": "^2.41.0",
+        "faker": "^4.1.0",
+        "mocha": "^5.2.0",
+        "mochawesome": "^3.0.3",
+        "selenium-webdriver": "^4.0.0-alpha.1"
+    }
+}
