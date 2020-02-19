@@ -1,4 +1,4 @@
-// let Page = require('./basePage');
+// let UserPage = require('./basePage');
 // const locator = require('../utils/locator');
 // const fake = require('../utils/fakeData');
 //
@@ -10,7 +10,7 @@
 //
 // let searchInput, searchButton, resultStat, result;
 //
-// Page.prototype.findInputAndButton = async function () {
+// UserPage.prototype.findInputAndButton = async function () {
 //     // searchInput = await this.findByName(searchInputSelectorId);
 //     // searchButton = await this.findByName(searchButtonSelectorName);
 //     let searchInput = await this.findById("usernameId");
@@ -40,7 +40,7 @@
 // //     }, 5000);
 // // };
 //
-// Page.prototype.findThroughId = async function(id) {
+// UserPage.prototype.findThroughId = async function(id) {
 //     // console.log("homePage -- findById");
 //     result = await this.findById(id);
 //     // console.log("result is ", result);
@@ -51,7 +51,7 @@
 //     }, 5000);
 // };
 //
-// Page.prototype.findThroughTagName = async function(tag) {
+// UserPage.prototype.findThroughTagName = async function(tag) {
 //     // console.log("homePage.js -- findThroughTagName");
 //     try{
 //         result = await this.findByTagName(tag);
@@ -67,4 +67,4 @@
 //     }, 5000);
 // };
 //
-// module.exports = Page;
+// module.exports = UserPage;

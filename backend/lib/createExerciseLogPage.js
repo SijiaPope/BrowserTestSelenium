@@ -1,47 +1,33 @@
-let Page = require('./basePage');
+let ExercisePage = require('./basePage');
 const locator = require('../utils/locator');
 
-let descriptionInput, durationInput, dateLabel, result;
-
-// Page.prototype.findInputAndButton = async function () {
-//     // searchInput = await this.findByName(searchInputSelectorId);
-//     // searchButton = await this.findByName(searchButtonSelectorName);
-//     console.log("homePage.js -- findInputAndButton");
-//     searchInput = await this.findById("usernameId");
-//     console.log("**************  search input is ", await searchInput.getAttribute('value'));
-//
-//     console.log("------- start to search button");
-//     searchButton = await this.findById("inputId");
-//     console.log("********  search button is ", await searchButton);
-//     searchButton.click();
-//
-//     console.log("**************  search button is ", await searchButton.getAttribute('value'));
-//
-//     const result = await this.driver.wait(async function () {
-//         const searchButtonText = await searchButton.getAttribute('value');
-//         console.log("searchButtonText is ", searchButtonText);
-//         const searchInputEnableFlag = await searchInput.isEnabled();
-//
-//         return {
-//             inputEnabled: searchInputEnableFlag,
-//             buttonText: searchButtonText
-//         }
-//     }, 5000);
-//     return result;
-// };
+let userNameSelection, descriptionInput, durationInput, datePicker, createButton, result;
 
 // not working
-Page.prototype.findInputAndButton = async function () {
+ExercisePage.prototype.findInputAndButton = async function () {
+    userNameSelection = await this.findById("userNameSelection");
+
     descriptionInput = await this.findById("descriptionInput");
-    // durationInput = await this.findThroughId("durationLabel");
-    // dateLabel = await this.findThroughId("dateLabel"); // it is a date
-    console.log("------------------------------ descriptionInput is ", descriptionInput);
+    durationInput = await this.findById("durationInput");
+    datePicker = await this.findById('datePicker');
+
+    createButton = await this.findById('createButton');
+    console.log("------------------------------ datePicker is ", datePicker);
     const result = await this.driver.wait(async function () {
         // const searchButtonText = await searchButton.getAttribute('value');
+        const userNameSelectionEnableFlag = await userNameSelection.isEnabled();
+
         const descriptionInputEnableFlag = await descriptionInput.isEnabled();
+        const durationInputEnableFlag = await durationInput.isEnabled();
+        const datePickerEnableFlag = await datePicker.isEnabled();
+        const createButtonText = await createButton.getAttribute('value');
+
         return {
-            inputEnabled: descriptionInputEnableFlag,
-            // buttonText: searchButtonText
+            userNameSelectionEnableFlag: userNameSelectionEnableFlag,
+            descriptionInputEnableFlag: descriptionInputEnableFlag,
+            durationInputEnableFlag: durationInputEnableFlag,
+            datePickerEnableFlag: datePickerEnableFlag,
+            createButtonText: createButtonText
         }
     }, 5000);
     return result;
@@ -61,7 +47,7 @@ Page.prototype.findInputAndButton = async function () {
 //     }, 5000);
 // };
 
-Page.prototype.findThroughId = async function(id) {
+ExercisePage.prototype.findThroughId = async function(id) {
     // console.log("homePage -- findById");
     result = await this.findById(id);
     // console.log("result is ", result);
@@ -72,7 +58,7 @@ Page.prototype.findThroughId = async function(id) {
     }, 5000);
 };
 
-Page.prototype.findThroughTagName = async function(tag) {
+ExercisePage.prototype.findThroughTagName = async function(tag) {
     console.log("homePage.js -- findThroughTagName");
     try{
         result = await this.findByTagName(tag);
@@ -88,4 +74,5 @@ Page.prototype.findThroughTagName = async function(tag) {
     }, 5000);
 };
 
-module.exports = Page;
+// module.exports = Page;
+module.exports = ExercisePage;

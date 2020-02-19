@@ -1,5 +1,5 @@
-const { describe, it, after, before } = require('mocha');
-const Page = require('../lib/createExerciseLogPage');
+const {describe, it, after, before} = require('mocha');
+const ExercisePage = require('../lib/createExerciseLogPage');
 const dotenv = require('dotenv');
 dotenv.config();
 const chai = require('chai');
@@ -7,7 +7,8 @@ const expect = chai.expect;
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-process.on('unhandledRejection', () => { });
+process.on('unhandledRejection', () => {
+});
 
 (async function example() {
     try {
@@ -16,7 +17,7 @@ process.on('unhandledRejection', () => { });
             let driver, page;
 
             beforeEach(async () => {
-                page = new Page();
+                page = new ExercisePage();
                 driver = page.driver;
                 await page.visit("http://localhost:3000/create");
 
@@ -46,19 +47,19 @@ process.on('unhandledRejection', () => { });
             });
 
             it('find the input box and button', async () => {
-            const result = await page.findInputAndButton();
-            expect(result.inputEnabled).to.equal(true);
-            // expect(result.buttonText).to.include('Create Exercise Log');
-        });
+                const result = await page.findInputAndButton();
+                expect(result.userNameSelectionEnableFlag).to.equal(true);
+                expect(result.descriptionInputEnableFlag).to.equal(true);
+                expect(result.durationInputEnableFlag).to.equal(true);
+                expect(result.datePickerEnableFlag).to.equal(true);
+                expect(result.createButtonText).to.equal('Create Exercise Log');
+            });
 
             // TODO: Front-end needs to add action after click on submit button
             // it('put name in input box and click create-user button', async () => {
             //     const result = await page.submitKeywordAndGetResult();
             //     expect(result.length).to.be.above(3);
             // });
-
-
-
 
 
         });
