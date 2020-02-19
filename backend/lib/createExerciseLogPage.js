@@ -33,41 +33,7 @@ ExercisePage.prototype.findInputAndButton = async function () {
     return result;
 };
 
-ExercisePage.prototype.openDatePickerAndPickADate = async function () {
-    //Click and open the datepickers
-    datePicker = await this.findById('datePicker');
-    datePicker.click();
 
-    //This is from date picker table
-    const dateWidgetFrom = await this.findByXpath('//*[@id="datePicker"]');
-    console.log("---------------------------------- dateWidgetFrom is ", dateWidgetFrom);
-
-    //This are the columns of the from date picker table
-    const columns = dateWidgetFrom.findElements(By.tagName("td"));
-
-    //DatePicker is a table. Thus we can navigate to each cell
-    //and if a cell matches with the current date then we will click it.
-    for (cell: columns) {
-        /*
-        //If you want to click 18th Date
-        if (cell.getText().equals("18")) {
-        */
-        //Select Today's Date
-        if (cell.getText().equals(today)) {
-            cell.click();
-            break;
-        }
-    }
-
-    const result = await this.driver.wait(async function () {
-        const datePickerEnableFlag = await datePicker.isEnabled();
-
-        return {
-            datePickerEnableFlag: datePickerEnableFlag,
-        }
-    }, 5000);
-    return result;
-};
 // Page.prototype.submitKeywordAndGetResult = async function() {
 //     await this.findInputAndButton();
 //
