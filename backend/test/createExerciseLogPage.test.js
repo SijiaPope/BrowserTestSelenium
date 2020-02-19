@@ -55,6 +55,23 @@ process.on('unhandledRejection', () => {
                 expect(result.createButtonText).to.equal('Create Exercise Log');
             });
 
+            it('date picker tester', async () => {
+                let date_ob = new Date();
+
+                let date = date_ob.getDate();
+                let month = date_ob.getMonth() + 1;
+                let year = date_ob.getFullYear();
+                console.log("date is ", date);
+                console.log("month is ", month);
+                console.log("year is ", year);
+
+                const result = await page.openDatePickerAndPickADate();
+                // expect(result.userNameSelectionEnableFlag).to.equal(true);
+
+
+            });
+
+
             // TODO: Front-end needs to add action after click on submit button
             // it('put name in input box and click create-user button', async () => {
             //     const result = await page.submitKeywordAndGetResult();

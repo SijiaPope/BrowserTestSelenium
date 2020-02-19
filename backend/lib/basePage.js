@@ -40,6 +40,11 @@ var Page = function() {
         return await this.driver.findElement(By.name(name));
     };
 
+    this.findByXpath = async function(name) {
+        await this.driver.wait(until.elementLocated(By.xpath(name)), 15000, 'Looking for element');
+        return await this.driver.findElement(By.xpath(name));
+    };
+
     // fill input web elements
     this.write = async function (el, txt) {
         return await el.sendKeys(txt);

@@ -1,25 +1,25 @@
 {
   "stats": {
     "suites": 2,
-    "tests": 2,
-    "passes": 2,
+    "tests": 3,
+    "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2020-02-19T09:28:26.940Z",
-    "end": "2020-02-19T09:28:29.824Z",
-    "duration": 2884,
-    "testsRegistered": 4,
-    "passPercent": 50,
+    "start": "2020-02-19T09:47:48.112Z",
+    "end": "2020-02-19T09:47:52.875Z",
+    "duration": 4763,
+    "testsRegistered": 5,
+    "passPercent": 60,
     "pendingPercent": 0,
     "other": 2,
     "hasOther": true,
     "skipped": 2,
     "hasSkipped": true,
-    "passPercentClass": "danger",
+    "passPercentClass": "warning",
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "f91d103f-479c-4a31-a47d-c7c0b5333467",
+    "uuid": "da0e6c5a-e53e-42f5-b117-937189a57b9a",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "6dfb6fb1-5074-487e-a4a2-f78206835343",
+        "uuid": "1f6b8dd6-a647-4173-9928-df8d868c1ad5",
         "title": "Create New Exercise Log page automated testing",
         "fullFile": "/Users/scarlettgao/Documents/MERN/mern_demo/backend/test/createExerciseLogPage.test.js",
         "file": "/test/createExerciseLogPage.test.js",
@@ -37,14 +37,14 @@
             "title": "\"before each\" hook",
             "fullTitle": "Create New Exercise Log page automated testing \"before each\" hook",
             "timedOut": false,
-            "duration": 967,
+            "duration": 1058,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "page = new ExercisePage();\ndriver = page.driver;\nawait page.visit(\"http://localhost:3000/create\");",
             "err": {},
             "isRoot": false,
-            "uuid": "5e7e840a-7ae8-44c5-a749-9b8b7db54a6a",
+            "uuid": "95603170-8bbc-43cd-8d2e-40ca66575e57",
             "isHook": true,
             "skipped": false
           }
@@ -54,14 +54,14 @@
             "title": "\"after each\" hook",
             "fullTitle": "Create New Exercise Log page automated testing \"after each\" hook",
             "timedOut": false,
-            "duration": 52,
+            "duration": 53,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "await page.quit();",
             "err": {},
             "isRoot": false,
-            "uuid": "50d2826f-66ae-4cdc-bef7-529d5ef5a639",
+            "uuid": "c7ff7bff-871c-472e-9330-b8de813c07c5",
             "isHook": true,
             "skipped": false
           }
@@ -71,7 +71,7 @@
             "title": "Create New Exercise Log -- check if contents are displayed ",
             "fullTitle": "Create New Exercise Log page automated testing Create New Exercise Log -- check if contents are displayed ",
             "timedOut": false,
-            "duration": 217,
+            "duration": 219,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -80,7 +80,7 @@
             "code": "const title = await page.findThroughTagName(\"h3\");\nexpect(title).to.equal('Create New Exercise Log');\nconst usernameLabel = await page.findThroughId(\"usernameLabel\");\nexpect(usernameLabel).to.equal('Username:');\nconst descriptionLabel = await page.findThroughId(\"descriptionLabel\");\nexpect(descriptionLabel).to.equal('Description:');\nconst durationLabel = await page.findThroughId(\"durationLabel\");\nexpect(durationLabel).to.equal('Duration (in minutes):');\nconst dateLabel = await page.findThroughId(\"dateLabel\");\nexpect(dateLabel).to.equal('Date:');",
             "err": {},
             "isRoot": false,
-            "uuid": "7c29f673-1df1-4e7f-a633-d640c3a34b30",
+            "uuid": "04f4b351-18dc-46e5-9faa-cecc39e1e282",
             "isHook": false,
             "skipped": false
           },
@@ -88,7 +88,7 @@
             "title": "find the input box and button",
             "fullTitle": "Create New Exercise Log page automated testing find the input box and button",
             "timedOut": false,
-            "duration": 204,
+            "duration": 215,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -97,26 +97,44 @@
             "code": "const result = await page.findInputAndButton();\nexpect(result.userNameSelectionEnableFlag).to.equal(true);\nexpect(result.descriptionInputEnableFlag).to.equal(true);\nexpect(result.durationInputEnableFlag).to.equal(true);\nexpect(result.datePickerEnableFlag).to.equal(true);\nexpect(result.createButtonText).to.equal('Create Exercise Log');",
             "err": {},
             "isRoot": false,
-            "uuid": "d1b74b6f-8d16-4297-adda-e1ed3c65c2c4",
+            "uuid": "05e9d57f-477c-4bd3-9e1d-44cc10a9c0a0",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "date picker tester",
+            "fullTitle": "Create New Exercise Log page automated testing date picker tester",
+            "timedOut": false,
+            "duration": 220,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "let date_ob = new Date();\nlet date = date_ob.getDate();\nlet month = date_ob.getMonth() + 1;\nlet year = date_ob.getFullYear();\nconsole.log(\"date is \", date);\nconsole.log(\"month is \", month);\nconsole.log(\"year is \", year);\nconst result = await page.openDatePickerAndPickADate();\n// expect(result.userNameSelectionEnableFlag).to.equal(true);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "eedbf751-dd70-4ebb-a522-6adc2f5b3ecc",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "7c29f673-1df1-4e7f-a633-d640c3a34b30",
-          "d1b74b6f-8d16-4297-adda-e1ed3c65c2c4"
+          "04f4b351-18dc-46e5-9faa-cecc39e1e282",
+          "05e9d57f-477c-4bd3-9e1d-44cc10a9c0a0",
+          "eedbf751-dd70-4ebb-a522-6adc2f5b3ecc"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 421,
+        "duration": 654,
         "root": false,
         "rootEmpty": false,
         "_timeout": 5000
       },
       {
-        "uuid": "befa647e-5969-47d7-84ac-951becc5d3c2",
+        "uuid": "8a6f2187-b869-4a7f-9f93-d3a2ad9186bc",
         "title": "User page automated testing",
         "fullFile": "/Users/scarlettgao/Documents/MERN/mern_demo/backend/test/userPage.test.js",
         "file": "/test/userPage.test.js",
@@ -136,7 +154,7 @@
               "estack": "TypeError: Page is not a constructor\n    at Context.beforeEach (test/userPage.test.js:19:24)"
             },
             "isRoot": false,
-            "uuid": "79bab624-693e-4778-9023-aa108dfd4b66",
+            "uuid": "0e6d512c-7f63-4a60-ad6b-f3584bbf2904",
             "isHook": true,
             "skipped": false
           }
@@ -146,7 +164,7 @@
             "title": "\"after each\" hook for \"find the input box and button\"",
             "fullTitle": "User page automated testing \"after each\" hook for \"find the input box and button\"",
             "timedOut": false,
-            "duration": 1,
+            "duration": 0,
             "state": "failed",
             "pass": false,
             "fail": true,
@@ -157,7 +175,7 @@
               "estack": "TypeError: Cannot read property 'quit' of undefined\n    at Context.afterEach (test/userPage.test.js:26:28)"
             },
             "isRoot": false,
-            "uuid": "4f46e3ca-cba7-4aa5-be9a-0971edbf4ee0",
+            "uuid": "21d9ff42-7955-43d7-884c-46cd0b5417ce",
             "isHook": true,
             "skipped": false
           }
@@ -174,7 +192,7 @@
             "code": "const result = await page.findInputAndButton();\nexpect(result.inputEnabled).to.equal(true);\nexpect(result.buttonText).to.include('Create User');",
             "err": {},
             "isRoot": false,
-            "uuid": "e322d8b4-f471-4827-b207-07a989763e7a",
+            "uuid": "5803744b-91bc-4048-b76c-7e332822f554",
             "isHook": false,
             "skipped": true
           },
@@ -189,7 +207,7 @@
             "code": "const title = await page.findThroughTagName(\"h3\");\nexpect(title).to.equal('Create New User');\nconst UserNameLable = await page.findThroughTagName(\"label\");\nconsole.log(\"UserNameLable is \", UserNameLable);\nexpect(UserNameLable).to.equal('Username:');",
             "err": {},
             "isRoot": false,
-            "uuid": "48506181-c344-45b9-85cd-ee273166b02f",
+            "uuid": "022889af-bb50-4226-85c8-868368843314",
             "isHook": false,
             "skipped": true
           }
@@ -199,8 +217,8 @@
         "failures": [],
         "pending": [],
         "skipped": [
-          "e322d8b4-f471-4827-b207-07a989763e7a",
-          "48506181-c344-45b9-85cd-ee273166b02f"
+          "5803744b-91bc-4048-b76c-7e332822f554",
+          "022889af-bb50-4226-85c8-868368843314"
         ],
         "duration": null,
         "root": false,
